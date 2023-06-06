@@ -22,8 +22,7 @@ message Client {
     string date_of_birth = 14;
     bool is_blocked = 15;
     string propiska = 16;
-    repeated string additional_phone_numbers = 17;
-    string passport_pinfl = 18;
+    string passport_pinfl = 17;
 }
 
 message ClientPrimaryKey {
@@ -44,8 +43,7 @@ message CreateClientRequest {
     string date_of_birth = 11;
     bool is_blocked = 12;
     string propiska = 13;
-    repeated string additional_phone_numbers = 14;
-    string passport_pinfl = 15;
+    string passport_pinfl = 14;
 }
 
 message UpdateClient {
@@ -63,8 +61,7 @@ message UpdateClient {
     string date_of_birth = 12;
     bool is_blocked = 13;
     string propiska = 14;
-    repeated string additional_phone_numbers = 15;
-    string passport_pinfl = 16;
+    string passport_pinfl = 15;
 }
 
 message UpdatePatchClient {
