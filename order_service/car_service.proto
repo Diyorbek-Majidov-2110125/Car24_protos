@@ -11,6 +11,6 @@ service CarService {
     rpc GetCarById(CarPrimaryKey) returns (Car){};
     rpc GetListCar(GetListCarRequest) returns (GetListCarResponse){};
     rpc UpdateCar(UpdateCarRequest) returns (Car){};
-    rpc UpdatePatchCar(UpdatePatchCar) returns (Car){};
+    rpc UpdatePatch(UpdatePatchCar) returns (Car){};
     rpc DeleteCar(CarPrimaryKey) returns (google.protobuf.Empty){};
 }
