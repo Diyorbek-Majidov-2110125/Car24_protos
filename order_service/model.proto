@@ -2,14 +2,7 @@ syntax = "proto3";
 
 package order_service;
 
-CREATE TABLE IF NOT EXISTS "model" (
-    id UUID PRIMARY KEY,
-    model_id UUID NOT NULL
-    tarif_id INTEGER,
-    name VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP,
-);
+import "google/protobuf/struct.proto";
 
 message Model {
     string id = 1;
