@@ -7,7 +7,7 @@ import "google/protobuf/empty.proto";
 import "model.proto";
 
 service ModelService {
-    rpc Create(CreateModelRequest) returns (CreateModelResponse){};
+    rpc Create(CreateModelRequest) returns (Model){};
     rpc GetById(ModelPrimaryKey) returns (Model){};
     rpc Update(UpdateModelRequest) returns (Model){};
     rpc GetList(GetListModelsRequest) returns (GetListModelsResponse){};
