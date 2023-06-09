@@ -11,6 +11,6 @@ service OrderService {
     rpc GetOrderById(OrderPrimaryKey) returns (Order) {}
     rpc GetOrdersList(GetListOrderRequest) returns (GetListOrderResponse) {}
     rpc UpdateOrder(OrderPrimaryKey) returns (Order) {}
-    rpc UpdatePatchOrder(UpdatePatchOrder) returns (Order) {}
+    rpc UpdatePatch(UpdatePatchOrder) returns (Order) {}
     rpc DeleteOrder(OrderPrimaryKey) returns (google.protobuf.Empty) {}
 }

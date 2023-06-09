@@ -11,6 +11,6 @@ service MechanicService {
     rpc GetMechanicById(MechanicPrimaryKey) returns (Mechanic){};
     rpc GetListMechanics(GetListMechanicRequest) returns (GetListMechanicResponse){};
     rpc UpdateMechanic(UpdateMechanicRequest) returns (Mechanic){};
-    rpc UpdatePatchMechanic(UpdatePatchMechanic) returns (Mechanic){};
+    rpc UpdatePatch(UpdatePatchMechanic) returns (Mechanic){};
     rpc DeleteMechanic(MechanicPrimaryKey) returns (google.protobuf.Empty){};
 }
