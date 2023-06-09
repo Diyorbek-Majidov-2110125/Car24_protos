@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+import "give_car.proto";
+import "google/protobuf/empty.proto";
+
+service GiveCarService {
+    rpc Create(CreateGiveCarRequest) returns (GiveCar){};
+    rpc GetById(GiveCarPkey) returns (GiveCar){};
+    rpc GetList(GetListGiveCarsRequest) returns (GetListGiveCarsResponse){};
+    rpc Update(UpdateGiveCar) returns (GiveCar){};
+    rpc UpdatePatch(UpdatePatchGiveCarRequest) returns (GiveCar){};
+    rpc Delete(GiveCarPkey) returns (google.protobuf.Empty){};
+}

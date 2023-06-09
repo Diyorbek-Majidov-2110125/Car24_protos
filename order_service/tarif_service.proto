@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+import "tarif.proto";
+import "google/protobuf/empty.proto";
+
+service TarifService {
+    rpc Create(CreateTarifRequest) returns (Tarif) {};
+    rpc GetById(TarifPrimaryKey) returns (Tarif) {};
+    rpc GetList(GetListTarifsRequest) returns (GetListTarifsResponse) {};
+    rpc Update(UpdateTarifRequest) returns (Tarif) {};
+    rpc UpdatePatch(UpdatePatchTarifRequest) returns (Tarif) {};
+    rpc Delete(TarifPrimaryKey) returns (google.protobuf.Empty) {};
+
+}

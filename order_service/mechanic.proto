@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+
+
+message Mechanic {
+    string id = 1;
+    string fullname = 2;
+    string phone_number = 3;
+    string photo = 4;
+}
+
+message CreateMechanicRequest {
+    string fullname = 1;
+    string phone_number = 2;
+    string photo = 3;
+}
+
+message MechanicPrimaryKey {
+    string id = 1;
+}
+
+message UpdateMechanicRequest {
+    string id = 1;
+    string fullname = 2;
+    string phone_number = 3;
+    string photo = 4;
+}
+
+message UpdatePatchMechanic {
+    string id = 1;
+    google.protobuf.Struct fields = 2;
+}
+
+message GetListMechanicRequest{
+    int64 offset = 1;
+    int64 limit = 2;
+    string search = 3;
+}
+
+message GetListMechanicResponse{
+    repeated Mechanic mechanics = 1;
+    int64 total = 2;
+}

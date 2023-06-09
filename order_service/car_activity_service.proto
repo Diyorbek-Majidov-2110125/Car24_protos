@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+import "car_activity.proto";
+import "google/protobuf/empty.proto";
+
+service CarActivityService {
+    rpc Create(CreateCarActivityRequest) returns (CarActivity){};
+    rpc GetById(CarActivityPkey) returns (CarActivity){};
+    rpc GetList(GetListCarActivityRequest) returns (GetListCarActivityResponse){};
+    rpc Update(UpdateCarActivityRequest) returns (CarActivity){};
+    rpc UpdatePatch(CarActivityPkey) returns (CarActivity){};
+    rpc Delete(CarActivityPkey) returns (google.protobuf.Empty){};
+}

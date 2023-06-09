@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package order_service;
+
+CREATE TABLE IF NOT EXISTS "model" (
+    id UUID PRIMARY KEY,
+    model_id UUID NOT NULL
+    tarif_id INTEGER,
+    name VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP,
+);
+
+message Model {
+    string id = 1;
+    string model_id = 2;
+    string tarif_id = 3;
+    string name = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message ModelPrimaryKey {
+    string id = 1;
+}
+
+message CreateModelRequest {
+    string model_id = 1;
+    string tarif_id = 2;
+    string name = 3;
+}
+
+message UpdateModelRequest {
+    string id = 1;
+    string model_id = 2;
+    string tarif_id = 3;
+    string name = 4;
+}
+
+message UpdatePatchModelRequest {
+    string id = 1;
+    google.protobuf.Struct fields = 2;
+}
+
+message GetListModelsRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+    string search = 3;
+}
+
+message GetListModelsResponse{
+    repeated Model models = 1;
+    int64 total = 2;
+}

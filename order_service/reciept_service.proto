@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+import "reciept.proto";
+import "google/protobuf/empty.proto";
+
+service RecieptService {
+    rpc Create(CreateRecieptRequest) returns (Reciept){};
+    rpc Get(RecieptPrimaryKey) returns (Reciept){};
+    rpc Update(UpdateRecieptRequest) returns (Reciept){};
+    rpc GetList(GetRecieptListRequest) returns (GetRecieptListResponse){};
+    rpc UpdatePatch(UpdatePatchRecieptRequest) returns (Reciept){};
+    rpc Delete(RecieptPrimaryKey) returns (google.protobuf.Empty){};
+}

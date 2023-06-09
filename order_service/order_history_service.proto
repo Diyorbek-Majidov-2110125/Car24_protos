@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+import "order_history.proto";
+
+service OrderHistoryService {
+    rpc Create(CreateOrderHistory) returns (OrderHistory){};
+    rpc Get(OrderHistoryPkey) returns (OrderHistory){};
+    rpc GetList(GetOrderHistoryListRequest) returns (GetOrderHistoryListResponse){};
+}

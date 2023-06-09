@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package order_service;
+
+message OrderHistory {
+    string status_id = 1;
+    string order_id = 2;
+    string comment = 3;
+    string created_at = 4;
+}
+
+message CreateOrderHistory {
+    string status_id = 1;
+    string order_id = 2;
+    string comment = 3;
+}
+
+message OrderHistoryPkey{
+    string order_id = 1;
+    string status_id = 2;
+}
+
+message GetOrderHistoryListRequest{
+    int64 offset = 1;
+    int64 limit = 2;
+    string search = 3;
+}
+
+message GetOrderHistoryListResponse{
+    repeated OrderHistory orderHistorList = 1;
+    int64 total = 2;
+}

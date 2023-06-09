@@ -1,0 +1,53 @@
+syntax="proto3";
+
+package order_service;
+option go_package="genproto/order_service";
+
+import "google/protobuf/struct.proto";
+
+message Reciept {
+    string id = 1;
+    string orderId=2;
+    string tarifId=3;
+    float totalPrice=4;
+    float paindPrice=5;
+    string createdAt=7;
+}
+
+message CreateRecieptRequest {
+    string orderId=2;
+    string tarifId=3;
+    float totalPrice=4;
+    float paidPrice=5;
+    string createdAt=7;
+}
+
+message RecieptPrimaryKey {
+    string id = 1;
+}
+
+message UpdateRecieptRequest {
+    string id = 1;
+    string orderId=2;
+    string tarifId=3;
+    float totalPrice=4;
+    float paidPrice=5;
+    string createdAt=7;
+}
+
+message GetRecieptListRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+    string search = 3;
+}
+
+message GetRecieptListResponse {
+    repeated Reciept reciepts = 1;
+    int32 count = 2;
+}
+
+message UpdatePatchRecieptRequest {
+    string id = 1;
+    google.protobuf.Struct fields = 2;
+}
+
